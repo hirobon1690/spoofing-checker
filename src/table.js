@@ -33,12 +33,12 @@ export default function BasicTable(props) {
                   {status ? (
                     <React.Fragment>
                       <PrivacyTipIcon color="error" />
-                      なりすましアカウントの可能性があります
+                      &nbsp;なりすましアカウントの可能性があります
                     </React.Fragment>
                   ) : (
                     <React.Fragment>
                       <CheckIcon color="success" />
-                      アカウントは存在しません
+                      &nbsp;アカウントは存在しません
                     </React.Fragment>
                   )}
                 </Box>

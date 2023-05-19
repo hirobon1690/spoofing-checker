@@ -14,11 +14,14 @@ const api =
 function App() {
   const [data, setData] = useState("");
   const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   const handleButtonClick = async () => {
+    setMessage("検索中...");
     try {
       const response = await axios.get(api +"?name="+ name);
       console.log(response.data);
       setData(response.data);
+      setMessage("");
     } catch (error) {
       console.error(error);
     }
@@ -34,7 +37,7 @@ function App() {
       <p className="center-text">流行りのなりすましが存在するかをチェックします．</p>
       <div style={{ display: "flex", justifyContent: "center", margin:'50px'}}>
       <Box sx={{ width: '400px', display: 'flex',justifyContent: "center"}}>
-        <p style={{fontSize: 'large'}}>@</p>
+        <p style={{fontSize: 'large'}}>@&nbsp;</p>
         <TextField
           label="Enter Your Username"
           variant="outlined"
@@ -58,9 +61,10 @@ function App() {
         style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
       >
         
+      <p>{message}</p>
       </div>
       <div style={{ display: "flex", justifyContent: "center", margin: 'auto', maxWidth:"600px"}}>
-        <BasicTable obj={data} />
+        {data ? <BasicTable obj={data} /> : <React.Fragment></React.Fragment>}
       </div>
       
       <p className="center-text">仕様上，凍結されていてもなりすましアカウントと表示される場合があります．</p>
