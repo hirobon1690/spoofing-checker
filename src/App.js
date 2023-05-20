@@ -68,6 +68,7 @@ function App() {
       </div>
       
       <p className="center-text">仕様上，凍結されていてもなりすましアカウントと表示される場合があります．</p>
+      <p className="center-text">自身のユーザー名の末尾にアンダースコアを含む場合，自身のアカウントがなりすましと表示される場合があります．</p>
       <footer style={{ display: "flex", justifyContent: "center", margin: 'auto',marginTop:'100px', maxWidth:"500px"}}>
         <p><a href="https://twitter.com/hirobon1690">@hirobon1690</a></p>
       </footer>

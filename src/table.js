@@ -45,7 +45,7 @@ export default function BasicTable(props) {
               </TableCell>
               <TableCell>
                 {status ? (
-                  <a href={"//twitter.com/"+user}>
+                  <a href={"//twitter.com/"+user} target="_blank" rel="noreferrer noopener">
                     <Button
                       variant="contained"
                       color="error"
